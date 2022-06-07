@@ -1,0 +1,32 @@
+﻿@model Award
+@{
+    ViewData["Title"] = "Update";
+}
+
+div class="row">
+    <div class="col-xl-12">
+        <!-- Product Info Start -->
+        <div class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label asp-for="Icon" class="form-label"></label>
+                            <input asp-for="Icon" class="form-control"/>
+                            <span asp-validation-for="Icon"></span>
+                        </div>  
+                        <div class="mb-3">
+                            <label asp-for="Text" class="form-label"></label>
+                            <input asp-for="Text" class="form-control"/>
+                            <span asp-validation-for="Text"></span>
+                        </div>  
+                        <div class="mb-3">
+                            <input  type="submit" class="btn btn-outline-success" value="Update" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,45 @@
+﻿@model List<Interest>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div>
+    <a asp-controller="Experience" asp-action="Create" >
+        Create
+    </a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Text</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Text</td>
+               
+               
+               
+                <td>
+                    <a asp-controller="Interest" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">
+                     Update
+                    </a>
+                    <a asp-controller="Interest" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger ">
+                        Delete
+                    </a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+

@@ -1,0 +1,135 @@
+﻿
+@model HomeVM
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+ <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <h1 class="mb-0">
+                        @Model.abouts.FirstOrDefault().FirstName
+                        <span class="text-primary">@Model.abouts.FirstOrDefault().LastName</span>
+                    </h1>
+                    <div class="subheading mb-5">
+                        @Model.abouts.FirstOrDefault().Adress  ·  @Model.abouts.FirstOrDefault().PhoneNumber
+                        <a href="mailto:name@email.com">@Model.abouts.FirstOrDefault().Email</a>
+                    </div>
+                    <p class="lead mb-5">@Model.abouts.FirstOrDefault().Title</p>
+                    <div class="social-icons">
+                        @foreach (var item in Model.sosialMedias)
+                       {
+                           
+                        <a class="social-icon" href="#!">@Html.Raw(item.Image)</a>
+                       }
+                        
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Experience</h2>
+                            @foreach (var item in Model.experiences)
+                           {
+                               
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">@item.SubTitle</h3>
+                            <div class="subheading mb-3">@item.Title</div>
+                            <p>@item.Info</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">@item.dateTime.ToString("MMMM dd,yyyy")</span></div>
+                    </div>
+                           }
+                   
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                   
+                        @foreach (var item in Model.educations)
+                       {
+                            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">@item.SubTitle</h3>
+                            <div class="subheading mb-3">@item.Title</div>
+                            <div>@item.Info</div>
+                            
+                        </div>
+                        
+                        <div class="flex-shrink-0"><span class="text-primary">@item.dateTime.ToString("MMMM dd,yyyy")</span></div>
+                       </div>
+                    }
+                    
+                   
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Skills-->
+            <section class="resume-section" id="skills">
+                
+                <div class="resume-section-content">
+                    @foreach (var item in Model.skills)
+                   {
+                       
+                    <h2 class="mb-5">Skills</h2>
+                    <div class="subheading mb-3">@item.Name</div>
+                   }
+                    <ul class="list-inline dev-icons">
+                   @foreach (var item in Model.details)
+                  {
+                      
+                        <li class="list-inline-item">@Html.Raw(item.Icon)</li>
+                        
+                  }
+                    </ul>
+                    <div class="subheading mb-3">Workflow</div>
+                    <ul class="fa-ul mb-0">
+                        @foreach (var item in Model.workFlows)
+                       {
+                           
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                           @item.Text
+                        </li>
+                       }
+                      
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Interests-->
+            <section class="resume-section" id="interests">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Interests</h2>
+                    @foreach (var item in Model.interests)
+                   {
+                            
+                    <p>@item.Text</p>
+                   }
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Awards-->
+            <section class="resume-section" id="awards">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Awards & Certifications</h2>
+                    <ul class="fa-ul mb-0">
+                        @foreach (var item in Model.awards)
+                       {
+                           
+                        <li>
+                            <span class="fa-li">@Html.Raw(item.Icon)</span>
+                            @item.Text
+                        </li>
+                       }
+                       
+                    </ul>
+                </div>
+            </section>

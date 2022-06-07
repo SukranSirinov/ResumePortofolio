@@ -1,0 +1,53 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="row">
+    <div class="col-xl-12">
+        <!-- Product Info Start -->
+        <div class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label asp-for="FirstName" class="form-label"></label>
+                            <input asp-for="FirstName" class="form-control"/>
+                            <span asp-validation-for="FirstName"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="LastName" class="form-label"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Adress" class="form-label"></label>
+                            <input asp-for="Adress" class="form-control"/>
+                            <span asp-validation-for="Adress" class="text-primary"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="PhoneNumber" class="form-label"></label>
+                            <input asp-for="PhoneNumber" class="form-control"/>
+                            <span asp-validation-for="PhoneNumber" class="text-primary"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control"/>
+                            <span asp-validation-for="Email" class="text-primary"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label"></label>
+                            <input asp-for="Title" class="form-control"/>
+                            <span asp-validation-for="Title" class="text-primary"></span>
+                        </div>
+                        <div class="mb-3">
+                            <input  type="submit" class="btn btn-outline-success" value="Update" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
